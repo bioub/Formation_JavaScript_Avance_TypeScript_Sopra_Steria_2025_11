@@ -25,8 +25,6 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
 }
 
-
-
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -51,10 +49,10 @@ function jouer() {
     essais.push(userNumber);
 
     if (entierAlea < userNumber) {
-      console.log('C\'est plus petit !');
+      console.log("C'est plus petit !");
       jouer();
     } else if (entierAlea > userNumber) {
-      console.log('C\'est plus grand !');
+      console.log("C'est plus grand !");
       jouer();
     } else {
       console.log('Félicitations, vous avez trouvé le nombre !');
