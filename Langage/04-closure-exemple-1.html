@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function createCounter() {
+      let count = 0;
+      const btnEl = document.createElement('button');
+      btnEl.innerText = `Count: ${count}`;
+      btnEl.addEventListener('click', () => {
+        count++;
+        btnEl.innerText = `Count: ${count}`;
+      });
+      document.body.appendChild(btnEl);
+    }
+
+    createCounter();
+    createCounter();
+    createCounter();
+
+    function createElement(tagName) { 
+      return function(content) {
+        const element = document.createElement(tagName);
+        element.innerText = content;
+        document.body.appendChild(element);
+      }
+    }
+
+    const createH2 = createElement('h2');
+    createH2('Hello World!');
+
+    const createParagraph = createElement('p');
+    createParagraph('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt');
+
+    // pile d'appels
+    // ^
+    // |
+    // |
+    // |
+    // |[cEl][addE][append][cEl][addE][append][cEl][addE][append]
+    // |[createCounter    ][createCounter    ][createCounter    ]                [=>    ]
+    // +-------------------------------------------------------------------------(click)--> temps
+  </script>
+</body>
+</html>

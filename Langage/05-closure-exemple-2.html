@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="counter">0</button>
+    <button class="counter">0</button>
+    <button class="counter">0</button>
+    <script>
+      const counterEls = document.querySelectorAll('.counter');
+
+      for (let i = 0; i < counterEls.length; i++) {
+        const counterEl = counterEls[i];
+
+        counterEl.addEventListener('click', () => {
+          let count = Number.parseInt(counterEl.innerText, 10);
+          count++;
+          counterEl.innerText = count;
+        });
+      }
+
+
+    // pile d'appels
+    // ^
+    // |
+    // |
+    // |
+    // |         
+    // |for (i) { [addE][addE][addE]  }                                          [=>    ]
+    // +-------------------------------------------------------------------------(click)--> temps
+    </script>
+  </body>
+</html>
