@@ -60,6 +60,7 @@ const obj1 = {
     console.log("key1 ", this.key1);
   },
 };
+obj1.key4 = 'new value'; // Ajouter une nouvelle paire clé/valeur
 
 const obj2 = {
   key1: 'value1',

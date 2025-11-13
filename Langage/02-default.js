@@ -63,3 +63,6 @@ console.log(multiplyWithNullishCoalescing(2, 3)); // Outputs: 6
 console.log(multiplyWithNullishCoalescing(2)); // Outputs: 2
 console.log(multiplyWithNullishCoalescing(2, undefined, 4)); // Outputs: 8
 console.log(multiplyWithNullishCoalescing(2, 0)); // Outputs: 0
+
+const letters = ['a', 'b', 'c'];
+const e = letters[4] ?? 'e'; // Utilise 'e' si letters[4] est undefined

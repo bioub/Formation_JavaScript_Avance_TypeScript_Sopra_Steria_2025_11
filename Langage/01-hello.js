@@ -7,7 +7,7 @@ names.push(123);
 function greet(name) {
   if (name.length === 3) {
     if (typeof name === 'string') {
-      console.log(`Hello, ${name.toUpperCase()}!`);
+      name.toUpperCase(); // No error, name is narrowed to string      console.log(`Hello, ${name.toUpperCase()}!`);
     } else {
       console.log(`Hello, user #${name}!`);
     }
