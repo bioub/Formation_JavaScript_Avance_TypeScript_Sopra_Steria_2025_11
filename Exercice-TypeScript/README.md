@@ -36,4 +36,4 @@ Créer un fichier `todo.ts` et créer un type alias `Todo` pour typer les todo (
 
 Dans `todos.ts` typer le paramètre d'entrée et de retour de la fonction `createTodoItem`
 
-Dans `main.ts` typer le retour de `fetchTodos` avec le type `Promise<Todo>`
+Dans `api.ts` typer le retour de `fetchTodos` avec le type `Promise<Todo>`
