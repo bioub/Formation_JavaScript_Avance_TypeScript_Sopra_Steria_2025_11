@@ -1,9 +1,9 @@
 // Importe la fonction getRandomIntInclusive depuis random.js
 // Exporte la classe Jeu avec le mot clé default
 import readline from 'node:readline';
+import { getRandomIntInclusive } from './random.js';
 
-
-class Jeu {
+export default class Jeu {
   constructor(options = {}) {
     // const min = options && typeof options.min === 'number' ? options.min : 0;
     // const max = options && typeof options.max === 'number' ? options.max : 100;
@@ -46,3 +46,4 @@ class Jeu {
     });
   }
 }
+
