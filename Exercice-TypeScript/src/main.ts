@@ -1,17 +1,13 @@
 import { fetchTodos } from './api.js';
 import { createTodoItem } from './todos.js';
 
-/** @type {HTMLFormElement} */
-const formEl = document.querySelector('.todos-form');
+const formEl = document.querySelector('.todos-form') as HTMLFormElement;
 
-/** @type {HTMLInputElement} */
-const inputEl = document.querySelector('.todos-form-input');
+const inputEl = document.querySelector('.todos-form-input') as HTMLInputElement;
 
-/** @type {HTMLDivElement} */
-const listEl = document.querySelector('.todos-list');
+const listEl = document.querySelector('.todos-list') as HTMLDivElement;
 
-/** @type {HTMLInputElement} */
-const toggleEl = document.querySelector('.todos-form-toggle');
+const toggleEl = document.querySelector('.todos-form-toggle') as HTMLInputElement;
 
 formEl.addEventListener('submit', (event) => {
   // preventDefault empêche l'action par défaut
@@ -45,8 +41,7 @@ Au clic de celle-ci, cocher ou décocher toutes les
 checkbox de la liste
 */
 toggleEl.addEventListener('click', () => {
-  /** @type {NodeListOf<HTMLInputElement>} */
-  const checkboxes = listEl.querySelectorAll('input[type="checkbox"]');
+  const checkboxes = listEl.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
 
   for (const checkbox of checkboxes) {
     checkbox.checked = toggleEl.checked;
@@ -54,11 +49,10 @@ toggleEl.addEventListener('click', () => {
 });
 
 listEl.addEventListener('click', (event) => {
-  /** @type {HTMLElement} */
-  const target = event.target;
+  const target = event.target as HTMLElement;
 
   if (target.classList.contains('todos-delete')) {
-    target.closest('.todos-item').remove();
+    target.closest('.todos-item')?.remove();
   }
 });
 
